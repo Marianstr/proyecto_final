@@ -1,0 +1,61 @@
+  <div class="container editor" style="margin-top:100px;">
+    <div class="row">
+         <div class="col-7">
+                <span> Hola {{usuario}} </span>
+         </div>
+         <div class="col-2" style="float:right;">
+            Volver a <a href="/">Home</a>
+         </div>
+        <div class="col-3" >
+            <a style="float:right;" href="/admin/login/logout" class="btn btn-danger">Cerrar sesión<i class="fas fa-sign-out-alt"></i></a>                      
+        </div> 
+        
+    </div>
+
+<br>
+     <div class="row">
+         
+        <div class="col-7">
+            <h2>Listado de precios</h2>
+        </div>
+
+        <div class="col-5">
+            <a style="float:right;" href="/admin/photos/create" class="btn btn-success">Nuevo<i class="fas fa-plus"></i></a>
+        </div>
+        
+    </div>
+
+
+<div class="row">
+        <div class="col">
+
+            <table class="table ">
+                <thead>
+                    <tr class="table-dark">
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Detalle</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each photos}}
+                    <tr>
+                        <td>{{this.id}}</td>
+                        <td>{{this.name}}</td>
+                        <td>{{this.dimension}}</td>
+                        <td>{{this.price}}</td>
+                        <td>
+                            <a href="/admin/photos/update/{{this.id}}" class="btn btn-warning">Editar<i class="fas fa-edit"></i></a>
+                            <a href="/admin/photos/delete/{{this.id}}" class="btn btn-danger">Eliminar<i class="fas fa-trash"></i></a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>   
+         </table>
+        </div>
+    </div>
+
+
+    </div>

@@ -1,0 +1,33 @@
+
+<div class="container" style="margin: 100px;">
+ <div class="row">
+
+    <div class="col-6 offset-3">
+        <h2 class="text-center">Editar precio</h2>
+
+        <form action="/admin/photos/update" method="post">
+            <input type="hidden" name="id" value="{{photo.id}}">
+            <div class="form-group  mb-3">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required class="form-control" value="{{photo.name}}">  
+            </div>
+
+            <div class="form-group  mb-3">
+                <label for="dimension">Dimensión:</label>
+                <input type="text" id="dimension" name="dimension" required class="form-control" value="{{photo.dimension}}"> 
+            </div>
+
+            <div class="form-group  mb-3">
+                <label for="name">Precio:</label>
+                <input type="text" id="price" name="price" required class="form-control" value="{{photo.price}}"> 
+            </div>
+
+            <button type="submit" class="btn btn-primary">Guardar</button>
+
+        </form>
+        {{#if error}}
+        <p>{{message}}</p>
+        {{/if}}
+
+ </div>
+</div>
